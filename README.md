@@ -7,7 +7,7 @@ Human kindly date-time library for go.
 
 `kindlytime` is date-time library for go.
 
-## Demo
+## Usage
 
 ```
 import (
@@ -17,6 +17,7 @@ import (
 
 jst, _ := time.LoadLocation("Asia/Tokyo")
 origin := time.Date(2016, 12, 30, 0, 0, 0, 0, jst)
+
 result := kindlytime.Parse("2 days ago", origin)
 // 2016-12-28 00:00:00
 ```
@@ -30,6 +31,12 @@ go 1.8.3
 ```
 $ go get github.com/yamaya/kindlytime
 ```
+
+## TODO
+
+- [ ] Convert time.Time object to kindlytime string
+- [ ] Localization
+- [ ] Test! Test! Test!
 
 ## Licence
 
