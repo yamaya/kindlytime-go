@@ -137,7 +137,15 @@ func Parse(input string, origin time.Time) (time.Time, error) {
 		if verbose {
 			fmt.Println("\tDoes not match")
 		}
-		return result, fmt.Errorf("Unrecognized input \"%s\"", input)
+		r, err := time.Parse(time.RFC3339, input)
+		if err != nil {
+			fmt.Errorf("Unrecognized input \"%s\" -- %s", input, err)
+		}
+		if verbose {
+			fmt.Println(r)
+		}
+		result = r
+		return result, err
 	}
 
 	return result, nil
